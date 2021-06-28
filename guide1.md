@@ -16,7 +16,7 @@ conda activate "/path/to/your/course/folder/envpygis"
 
 ### 2.2 Install packages
 
-Run the commands in the conda prompt.
+Run the commands in the conda prompt. **Note** that once enter the virtual environment (by type ```conda activate```), then the packages will only be available in this virtual environment.
 ```
 conda install pygeos --channel conda-forge
 conda install numpy pandas matplotlib shapely geopandas -c conda-forge
@@ -46,6 +46,37 @@ file_path = './lecture1/data/ne_10m_admin_0_countries.shp'
 world = gpd.read_file(file_path)
 world.plot(figsize=(10, 6))
 ```
+
+### 2.5 Useful conda commands
+
+Packages commands: lsit, search, install, uninstall, update
+
+```
+conda list                          #list all the packages
+conda list --name myenv             #list all the packages in myenv
+conda search scikit-learn           # search whether scikit-learn is available
+conda install scikit-learn=0.23.1   #install sl version 0.23.1
+conda uninstall scikit-learn        
+conda update scikit-learn           #update
+conda clean                         #remove useless packages
+conda clearn -y --all               #delete all packages and cache
+```
+
+Environment commands: create, activate, deactivate, list, remove, open jupyter
+```
+#conda create --name [env name][python version][packages]
+conda create -n myenv python=3.5                 #create myenv in python3.5
+conda create --name myenv python=3.5 numpy scipy #create myenv in python3.5 and install 2 pkgs
+conda create --name mybase --clone base          #clone base and create mybase
+
+conda activate myenv              
+conda deactivate                    
+conda env list                     #list all env
+conda remove --name myenv --all    #remove myenv
+
+jupyter lab --notebook-dir="path/to/your/course/folder/"   #open jupyter lab in virtual env
+```
+
 
 ## References
 - [Python setup for GIS applications under Windows](https://gist.github.com/sebastianhohmann/4098cc6763b35f04317a850881af998a) [1]
