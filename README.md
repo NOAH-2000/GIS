@@ -1,7 +1,2 @@
 # GIS
-This is a notebook for GIS application in finance.
-
-## 1. Guide to Github
-https://guides.github.com/activities/hello-world/
-
-## 2. Python Set Up: Anaconda
+This is a notebook for GIS application in finance. Part of this note is reorganized from the Wheeler Institute Geographic Information System (GIS) workshop. Thanks for their helpful sharing!
